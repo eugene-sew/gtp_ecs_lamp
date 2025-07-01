@@ -5,9 +5,9 @@ function get_films($data)
 {
     global $bookconn;
     $output = '';
-    $sql = "SELECT _title, author_name, country, release_year FROM bookstore.books 
-              WHERE _id IN (SELECT _book_id FROM bookstore.book_category_relationship 
-                WHERE _cat_id = (SELECT cat_id FROM bookstore.category WHERE cat_title ='" . $data . "'))";
+    $sql = "SELECT _title, author_name, country, release_year FROM books 
+              WHERE _id IN (SELECT _book_id FROM book_category_relationship 
+                WHERE _cat_id = (SELECT cat_id FROM category WHERE cat_title ='" . $data . "'))";
     //echo $sql;
 
 
@@ -48,7 +48,7 @@ function get_country($data)
 {
     global $bookconn;
     $output = '';
-    $sql = "SELECT _title, author_name, country, release_year FROM bookstore.books WHERE country = '" . $data . "'";
+    $sql = "SELECT _title, author_name, country, release_year FROM books WHERE country = '" . $data . "'";
     //echo $sql;
 
 
@@ -89,7 +89,7 @@ function get_author($data)
 {
     global $bookconn;
     $output = '';
-    $sql = "SELECT _title, author_name, country, release_year FROM bookstore.books WHERE author_name = '" . $data . "'";
+    $sql = "SELECT _title, author_name, country, release_year FROM books WHERE author_name = '" . $data . "'";
     //echo $sql;
 
 
@@ -130,7 +130,7 @@ function get_year($data)
 {
     global $bookconn;
     $output = '';
-    $sql = $sql = "SELECT _title, author_name, country, release_year FROM bookstore.books WHERE release_year = '" . $data . "'";
+    $sql = $sql = "SELECT _title, author_name, country, release_year FROM books WHERE release_year = '" . $data . "'";
     //echo $sql;
 
 

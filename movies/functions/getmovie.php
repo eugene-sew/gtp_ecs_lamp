@@ -5,7 +5,7 @@ function get_films($data)
 {
     global $conn;
     $output = '';
-    $sql = "SELECT _title, director, release_year, country FROM moviedb.films WHERE _id IN (SELECT film_id FROM moviedb.genre_film_relationship WHERE genre_id = (SELECT _id FROM moviedb.genre WHERE _title = '" . $data . "'))";
+    $sql = "SELECT _title, director, release_year, country FROM films WHERE _id IN (SELECT film_id FROM genre_film_relationship WHERE genre_id = (SELECT _id FROM genre WHERE _title = '" . $data . "'))";
     //echo $sql;
 
 
@@ -47,7 +47,7 @@ function get_country($data)
 {
     global $conn;
     $output = '';
-    $sql = "SELECT _title, director, release_year, country FROM moviedb.films WHERE country = '" . $data . "'";
+    $sql = "SELECT _title, director, release_year, country FROM films WHERE country = '" . $data . "'";
     //echo $sql;
 
 
@@ -88,7 +88,7 @@ function get_director($data)
 {
     global $conn;
     $output = '';
-    $sql = "SELECT _title, director, release_year, country FROM moviedb.films WHERE director = '" . $data . "'";
+    $sql = "SELECT _title, director, release_year, country FROM films WHERE director = '" . $data . "'";
     //echo $sql;
 
 
@@ -129,7 +129,7 @@ function get_year($data)
 {
     global $conn;
     $output = '';
-    $sql = $sql = "SELECT _title, director, release_year, country FROM moviedb.films WHERE release_year = '" . $data . "'";
+    $sql = $sql = "SELECT _title, director, release_year, country FROM films WHERE release_year = '" . $data . "'";
     //echo $sql;
 
 

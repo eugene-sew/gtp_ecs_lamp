@@ -11,7 +11,7 @@ include("../movies/includes/movieDatabase.php");
 function add_genre()
 {
     global $conn;
-    $sql = "INSERT INTO moviedb.genre (`_title`) VALUES ('".$_GET["add_Genre"]."')";
+    $sql = "INSERT INTO genre (`_title`) VALUES ('".$_GET["add_Genre"]."')";
     //echo "<option>$sql</option>";
     // Check connection
     if (!$conn) {

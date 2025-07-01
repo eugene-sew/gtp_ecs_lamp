@@ -12,7 +12,7 @@ function get_book()
 {
     global $bookconn;
     $output = '';
-    $sql = "SELECT _title, author_name, country, release_year FROM bookstore.books WHERE _title LIKE '%".$_GET["search"]."%'";
+    $sql = "SELECT _title, author_name, country, release_year FROM books WHERE _title LIKE '%".$_GET["search"]."%'";
     //echo $sql;
     $result = mysqli_query($bookconn, $sql);
 // Check connection

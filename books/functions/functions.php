@@ -7,7 +7,7 @@
  */
 function getbooks(){
     global $bookconn;
-    $get_films = "SELECT _title, author_name, country, release_year FROM bookstore.books ORDER BY _title;";
+    $get_films = "SELECT _title, author_name, country, release_year FROM books ORDER BY _title;";
     $run_films = mysqli_query($bookconn, $get_films);
     while ($row_films = mysqli_fetch_assoc($run_films)){
         $film_name = $row_films['_title'];
@@ -17,7 +17,7 @@ function getbooks(){
 
 function getcategories(){
     global $bookconn;
-    $get_cats = "SELECT cat_title FROM bookstore.category ORDER BY cat_title";
+    $get_cats = "SELECT cat_title FROM category ORDER BY cat_title";
     $run_cats = mysqli_query($bookconn, $get_cats);
     while ($row_cats = mysqli_fetch_assoc($run_cats)) {
         $cats_name = $row_cats['cat_title'];
@@ -27,7 +27,7 @@ function getcategories(){
 
 function optcategories(){
     global $bookconn;
-    $get_cats = "SELECT cat_title FROM bookstore.category ORDER BY cat_title";
+    $get_cats = "SELECT cat_title FROM category ORDER BY cat_title";
     $run_cats = mysqli_query($bookconn, $get_cats);
     while ($row_cats = mysqli_fetch_assoc($run_cats)) {
         $cats_name = $row_cats['cat_title'];
@@ -37,7 +37,7 @@ function optcategories(){
 
 function getCountries(){
      global $bookconn;
-    $get_countries = "SELECT DISTINCT(country) FROM  bookstore.books order by country";
+    $get_countries = "SELECT DISTINCT(country) FROM books order by country";
     $run_countries = mysqli_query($bookconn, $get_countries);
     while ($row_countries = mysqli_fetch_assoc($run_countries)) {
         $countries_name = $row_countries['country'];
@@ -47,7 +47,7 @@ function getCountries(){
 
 function optCountries(){
     global $bookconn;
-    $get_countries = "SELECT DISTINCT(country) FROM  bookstore.books order by country";
+    $get_countries = "SELECT DISTINCT(country) FROM books order by country";
     $run_countries = mysqli_query($bookconn, $get_countries);
     while ($row_countries = mysqli_fetch_assoc($run_countries)) {
         $countries_name = $row_countries['country'];
@@ -57,7 +57,7 @@ function optCountries(){
 
 function getAuthors(){
     global $bookconn;
-    $get_authors = "SELECT DISTINCT(author_name) FROM  bookstore.books order by author_name";
+    $get_authors = "SELECT DISTINCT(author_name) FROM books order by author_name";
     $run_authors = mysqli_query($bookconn, $get_authors);
     while ($row_authors = mysqli_fetch_assoc($run_authors)) {
         $authors_name = $row_authors['author_name'];
@@ -67,7 +67,7 @@ function getAuthors(){
 
 function optAuthors(){
     global $bookconn;
-    $get_authors = "SELECT DISTINCT(author_name) FROM  bookstore.books order by author_name";
+    $get_authors = "SELECT DISTINCT(author_name) FROM books order by author_name";
     $run_authors = mysqli_query($bookconn, $get_authors);
     while ($row_authors = mysqli_fetch_assoc($run_authors)) {
         $authors_name = $row_authors['author_name'];
@@ -77,7 +77,7 @@ function optAuthors(){
 
 function getYears(){
     global $bookconn;
-    $get_year = "SELECT DISTINCT(release_year) FROM bookstore.books order by release_year";
+    $get_year = "SELECT DISTINCT(release_year) FROM books order by release_year";
     $run_year = mysqli_query($bookconn, $get_year);
     while ($row_year = mysqli_fetch_assoc($run_year)) {
         $year = $row_year['release_year'];
@@ -88,7 +88,7 @@ function getYears(){
 function show_all_books() {
     global $bookconn;
     $output = '';
-    $sql = "SELECT _title, author_name, country, release_year FROM bookstore.books ORDER BY _title";
+    $sql = "SELECT _title, author_name, country, release_year FROM books ORDER BY _title";
     $result = mysqli_query($bookconn, $sql);
 
     if (mysqli_num_rows($result) > 0) {

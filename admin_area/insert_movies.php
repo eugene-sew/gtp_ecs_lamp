@@ -199,16 +199,16 @@ if (isset($_GET['submit'])) {
         //echo $country;
     }
 
-    $sql = "INSERT INTO moviedb.films (`_title`, `director`, `release_year`, `country`) VALUES ('$movieName', '$director' , '$releaseDate', '$country')";
+    $sql = "INSERT INTO films (`_title`, `director`, `release_year`, `country`) VALUES ('$movieName', '$director' , '$releaseDate', '$country')";
 //    echo $sql;
     if (mysqli_query($conn, $sql)) {
         //echo "New record created successfully";
     } else {
         echo "Error";
     }
-    $outputsql = "INSERT INTO moviedb.genre_film_relationship (film_id, genre_id) 
-                    VALUES ( (select _id from moviedb.films where _title='$movieName'),
-                    (SELECT _id FROM moviedb.genre where _title='";
+    $outputsql = "INSERT INTO genre_film_relationship (film_id, genre_id) 
+                    VALUES ( (select _id from films where _title='$movieName'),
+                    (SELECT _id FROM genre where _title='";
     if (isset($_GET['__genres'])) {
         $a = 1;
         foreach ($_GET['__genres'] as $gen) {

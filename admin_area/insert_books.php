@@ -207,9 +207,9 @@ if (isset($_GET['submit'])) {
     } else {
         echo "Error";
     }
-    $outputsql = "INSERT INTO bookstore.book_category_relationship (_book_id, _cat_id) 
-                    VALUES ( (select _id from bookstore.books where _title='$bookName'),
-                    (SELECT cat_id FROM bookstore.category where cat_title='";
+    $outputsql = "INSERT INTO book_category_relationship (_book_id, _cat_id) 
+                    VALUES ( (select _id from books where _title='$bookName'),
+                    (SELECT cat_id FROM category where cat_title='";
     if (isset($_GET['__cats'])) {
         $a = 1;
         foreach ($_GET['__cats'] as $cat) {

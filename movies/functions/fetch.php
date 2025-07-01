@@ -12,7 +12,7 @@ function get_film()
 {
     global $conn;
     $output = '';
-    $sql = "SELECT _title, director, release_year, country FROM moviedb.films WHERE _title LIKE '%".$_GET["search"]."%'";
+    $sql = "SELECT _title, director, release_year, country FROM films WHERE _title LIKE '%".$_GET["search"]."%'";
     //echo $sql;
     $result = mysqli_query($conn, $sql);
 // Check connection
