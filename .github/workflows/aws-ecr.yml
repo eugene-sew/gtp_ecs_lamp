@@ -4,15 +4,6 @@ on:
   push:
     branches: [ "main" ]
 
-env:
-  AWS_REGION: MY_AWS_REGION                   
-  ECR_REPOSITORY: MY_ECR_REPOSITORY           
-  ECS_SERVICE: MY_ECS_SERVICE                 
-  ECS_CLUSTER: MY_ECS_CLUSTER                
-  ECS_TASK_DEFINITION: MY_ECS_TASK_DEFINITION 
-                                               
-  CONTAINER_NAME: MY_CONTAINER_NAME
-
 permissions:
   contents: read
 
@@ -33,7 +24,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
 
-    - name: Login to Amazon ECR
+    - name: Login to Amazon ECR 
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
 
