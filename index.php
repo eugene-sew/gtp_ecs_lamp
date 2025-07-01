@@ -85,6 +85,8 @@ echo "<br>";
 echo getenv('DATABASE_PASSWORD');
 echo "<br>";
 echo getenv('DATABASE_NAME');
+echo "<br>";
+echo getenv('DATABASE_PASSWORD');
 ?>
 
 
