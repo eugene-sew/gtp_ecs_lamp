@@ -78,7 +78,13 @@ function loadEnv(
 
 loadEnv();
 
-
+echo getenv('DATABASE_HOST');
+echo "<br>";
+echo getenv('DATABASE_USER');
+echo "<br>";
+echo getenv('DATABASE_PASSWORD');
+echo "<br>";
+echo getenv('DATABASE_NAME');
 ?>
 
 
