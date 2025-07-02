@@ -93,7 +93,6 @@
   },
   "registeredAt": "2025-07-02T09:16:04.004Z",
   "registeredBy": "arn:aws:sts::344837150589:assumed-role/DCEPrincipal-dce/JmlBTRxnmR__eugene+sewor+amalitechtraining+org",
-  "enableFaultInjection": false,
   "tags": [
     {
       "key": "project",
