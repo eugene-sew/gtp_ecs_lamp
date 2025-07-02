@@ -6,6 +6,9 @@
  * Time: 7:31 PM
  */
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include("../includes/movieDatabase.php");
 
 function get_film()
@@ -15,6 +18,10 @@ function get_film()
     $sql = "SELECT _title, director, release_year, country FROM films WHERE _title LIKE '%".$_GET["search"]."%'";
     //echo $sql;
     $result = mysqli_query($conn, $sql);
+
+    if ($result === false) {
+        die("SQL Error: " . mysqli_error($conn));
+    }
 // Check connection
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());

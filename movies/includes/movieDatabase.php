@@ -1,10 +1,10 @@
 <?php
-include '../loadenv.php';
+include __DIR__ . '/../../loadenv.php';
 
 $servername = getenv('DATABASE_HOST');
 $username = getenv('DATABASE_USER');
 $password = getenv('DATABASE_PASSWORD');
-$dbname = getenv('DATABASE_NAME');
+$dbname = getenv('DATABASE_NAME') ?: 'media';
 
 
 $conn = mysqli_connect($servername, $username, $password,$dbname );
@@ -14,3 +14,4 @@ if (!$conn) {
 }
 
 ?>
+
