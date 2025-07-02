@@ -1,6 +1,5 @@
 <?php
-
-include_once '../loadenv.php';
+include '../loadenv.php';
 
 $servername = getenv('DATABASE_HOST');
 $username = getenv('DATABASE_USER');
