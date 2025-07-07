@@ -2,3 +2,6 @@
 .env
 mySqlDB/
 d.env
+ecs-params.yml
+ecli-bmdb-task-def.json
+ecli-bmdb-task-def-revision2.json

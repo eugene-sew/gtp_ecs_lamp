@@ -1,0 +1,8 @@
+version: "3"
+services:
+  bmdb:
+    image: 344837150589.dkr.ecr.eu-west-1.amazonaws.com/ecli-bmdb-app:latest
+    ports:
+      - "80:80"
+    deploy:
+      replicas: 2
