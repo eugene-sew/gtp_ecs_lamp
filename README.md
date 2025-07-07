@@ -21,6 +21,9 @@ My deployment uses the following AWS services:
 - **CloudWatch** - For logging and monitoring
 - **IAM** - For security and permissions
 
+The architecture of my deployment is as follows:
+![Alt text](screenshots/ecs-cli//architecture_d.png "Screen Shot")
+
 ## Step 1: Containerizing the Application
 
 First, I created a production-ready Dockerfile that includes:
